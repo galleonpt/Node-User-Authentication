@@ -31,7 +31,9 @@ app.post("/users", async (req, res) => {
 app.post("/users/login", async (req, res) => {
   const user = users.find((user) => user.name === req.body.name);
 
-  if (!user) return res.status(400).send({ message: "Cannot find user" });
+  if (!user) return res.status(400).send({
+    message: "Cannot find user"
+  });
 
   try {
     //req.body.password -> original password
@@ -48,3 +50,6 @@ app.post("/users/login", async (req, res) => {
 });
 
 app.listen(3333);
+
+
+//teste
